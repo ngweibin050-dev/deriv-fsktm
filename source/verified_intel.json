@@ -1,0 +1,73 @@
+{
+  "lastUpdated": "2026-11-14",
+  "derivMalaysia": {
+    "legalEntity": "Deriv Services Malaysia Sdn. Bhd.",
+    "headquartersAddress": "Deriv HQ, 3500, Jalan Teknokrat 3, 63000 Cyberjaya, Selangor, Malaysia",
+    "malaysiaOffices": ["Cyberjaya (Operational HQ)", "Labuan (LFSA Regulated Entity)", "Melaka", "Ipoh"],
+    "recognition": "LinkedIn Top Companies to Work For in Malaysia (2025)",
+    "flagshipTechInitiatives": [
+      {
+        "name": "Deriv <AI> Hackathon (Cyberjaya HQ)",
+        "details": "Physical 24-hour hackathons hosted at Deriv HQ in Cyberjaya (with prize pools up to RM 30,000 and hack-to-hire fast-tracks) bringing together engineers and students to build AI-powered FinTech and trading solutions."
+      },
+      {
+        "name": "BeSquare by Deriv",
+        "details": "Deriv's flagship tech graduate trainee & engineering mentorship programme hosted in Cyberjaya."
+      },
+      {
+        "name": "Deriv API & Developer Ecosystem",
+        "details": "Real-time WebSocket API (JSON-RPC) at api.deriv.com supporting Python, TypeScript/JavaScript, and automated trading/analytics bots."
+      }
+    ],
+    "officialLinks": {
+      "website": "https://deriv.com",
+      "careers": "https://deriv.com/careers",
+      "developerPortal": "https://api.deriv.com",
+      "linkedin": "https://www.linkedin.com/company/derivdotcom",
+      "instagram": "https://www.instagram.com/deriv_official/",
+      "github": "https://github.com/binary-com"
+    }
+  },
+  "umFsktm": {
+    "facultyFullName": "Faculty of Computer Science and Information Technology (FSKTM / FCSIT), Universiti Malaya",
+    "address": "Fakulti Sains Komputer dan Teknologi Maklumat, Universiti Malaya, 50603 Kuala Lumpur, Malaysia",
+    "officialContact": {
+      "website": "https://fsktm.um.edu.my",
+      "email": "dekan_fsktm@um.edu.my",
+      "phone": "+603-7967 6300",
+      "studentAffairs": "Office of the Deputy Dean (Student Affairs / HEPA FSKTM)"
+    },
+    "academicDepartments": [
+      "Department of Artificial Intelligence",
+      "Department of Software Engineering",
+      "Department of Computer System & Technology",
+      "Department of Information Systems",
+      "Multimedia Unit"
+    ],
+    "campusFacilitiesAndVenues": [
+      "Block A (Student Discussion Rooms, Micro Labs, Rear Cafeteria)",
+      "Block B (Main Lecture Halls including Dewan Kuliah 1 / DK1 & DK2, Bilik Kuliah BK1 & BK2)",
+      "The Cube (30-pax multipurpose collaborative teaching & workshop room with multimedia projector)"
+    ],
+    "studentOrganizations": [
+      {
+        "name": "PEKOM (Persatuan Komputer Universiti Malaya)",
+        "role": "Official registered FSKTM student society bridging students, academia, and industry.",
+        "instagram": "@pekomum",
+        "flagshipEvents": [
+          "UMHackathon (National-level Data Science, ML & AI Hackathon at FSKTM & KPS Auditorium)",
+          "FSKTM Dean's Cup",
+          "Industrial Visits & Tech Career Fairs"
+        ]
+      },
+      {
+        "name": "GDG on Campus Universiti Malaya (GDGoC UM)",
+        "role": "Google-supported developer community at UM hosting 'Build With AI' and 'Road to DevFest' workshops at FSKTM."
+      },
+      {
+        "name": "UM Cybersecurity Community (UMCS)",
+        "role": "Organizers of the UM Cybersecurity Summit (umcybersec.site) and CTF workshops."
+      }
+    ]
+  }
+}
