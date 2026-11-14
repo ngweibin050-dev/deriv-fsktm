@@ -7,6 +7,7 @@ import { SponsorshipBudget } from './components/SponsorshipBudget';
 import { ResourceMatcher } from './components/ResourceMatcher';
 import { FaqAccordion } from './components/FaqAccordion';
 import { FirstStepForm } from './components/FirstStepForm';
+import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -31,6 +32,7 @@ export const App: React.FC = () => {
         <ResourceMatcher />
         <FaqAccordion />
         <FirstStepForm selectedSlot={selectedSlot} />
+        <ContactSection />
       </main>
       <Footer />
     </div>
