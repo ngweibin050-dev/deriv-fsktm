@@ -61,15 +61,35 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Co-Branding Trust Strip */}
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs">
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
               <span className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 font-medium text-slate-200">
                 <Award className="h-3.5 w-3.5 text-[#FF444F]" />
                 LinkedIn Top Company Malaysia (2025)
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700/80 bg-slate-900/80 px-3 py-1.5 font-medium text-slate-200">
                 <Building2 className="h-3.5 w-3.5 text-[#FF444F]" />
-                4 MY Offices: Cyberjaya · Labuan · Melaka · Ipoh
+                HQ: 3500 Jalan Teknokrat 3, Cyberjaya (25 mins to UM)
               </span>
+            </div>
+
+            {/* Quick 3-Metric Value Strip */}
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 no-print">
+              {PARTNER_PERSONA.quickFacts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="rounded-xl border border-slate-800 bg-slate-950/70 p-3"
+                >
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    {fact.label}
+                  </p>
+                  <p className="mt-1 font-heading text-sm font-extrabold text-white">
+                    {fact.value}
+                  </p>
+                  <p className="mt-0.5 text-[10px] text-slate-400">
+                    {fact.subtext}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 

@@ -18,10 +18,36 @@ export interface VenueCard {
   block: string;
   bestFor: string;
   capacity: string;
+  specs: string;
   image: string;
   imageAlt: string;
   targetUrl: string;
   urlLabel: string;
+}
+
+export interface ProposedDateSlot {
+  id: string;
+  badge: string;
+  date: string;
+  time: string;
+  venue: string;
+  whyFits: string;
+  academicContext: string;
+}
+
+export interface BudgetLineItem {
+  category: string;
+  amount: string;
+  description: string;
+  coveredBy: string;
+}
+
+export interface WhyChoosePoint {
+  id: string;
+  title: string;
+  description: string;
+  badge: string;
+  stat: string;
 }
 
 export interface ResourceCheckbox {
@@ -98,27 +124,179 @@ export const BRAND_ASSETS = {
 };
 
 export const PARTNER_PERSONA = {
-  eyebrow: 'FOR UNIVERSITI MALAYA · FSKTM (FCSIT) STUDENT CLUBS & PEKOM',
-  headline: 'Turn Classroom Code into Real-Time FinTech Systems',
+  eyebrow: 'DERIV PARTNER PROGRAM · SPECIALLY PREPARED FOR PEKOM & FSKTM UM',
+  headline: 'Deriv × PEKOM: The Turnkey FinTech & API Buildathon',
   subheadline:
-    'Deriv partners with PEKOM and FSKTM student societies to host hands-on engineering workshops and buildathons—bringing live WebSocket APIs and software engineers from our Cyberjaya HQ (3500 Jalan Teknokrat 3) straight to DK1 Block B and Block A Labs.',
-  primaryCta: 'Start With a 15-Min Intro Chat',
-  secondaryMeta: 'Built for PEKOM (@pekomum), GDGoC UM & FCSIT Undergraduate Committees',
+    'Deriv provides RM 5,000 full sponsorship (prizes, Halal catering, swag), live WebSocket APIs, and engineering mentors from our Cyberjaya HQ. PEKOM hosts the students and reserves Dewan Kuliah 1 (Block B) or Makmal MM1 (Block A). Zero club budget required.',
+  primaryCta: 'Select a Date & Lock in the Sponsorship',
+  secondaryMeta: 'Built for PEKOM (@pekomum), GDGoC UM & FCSIT Undergraduates',
   quickFacts: [
     {
-      label: 'On-Campus Format',
-      value: '2.5–4 Hr Buildathon (e.g. Fri 2:30–5:00 PM)',
-      subtext: 'Fits DK1 Block B or Block A Labs (MM1/MM2)',
+      label: 'Total Deriv Sponsorship',
+      value: 'RM 5,000 (100% Funded)',
+      subtext: 'Prizes (RM 2k) + Halal FnB (RM 1.8k) + Swag & Cloud',
     },
     {
-      label: 'Cost to PEKOM / Club',
-      value: 'RM 0 (100% Sponsored by Deriv)',
-      subtext: 'Mentors, API sandbox, swag & food covered',
+      label: 'Recommended Format',
+      value: '3–4 Hour Mini-Buildathon',
+      subtext: 'Fits Friday 2:30–5:30 PM (DK1) or Saturday 9:30 AM',
     },
     {
-      label: 'Student Audience',
-      value: 'All FCSIT Undergraduates (Year 1–4)',
-      subtext: 'AI, Software Eng, Computer Systems & IS',
+      label: 'Club Cost / Financial Risk',
+      value: 'RM 0.00 (Zero Out-of-Pocket)',
+      subtext: 'Deriv covers catering, prizes, tokens & speaker logistics',
+    },
+  ],
+};
+
+export const PROPOSED_DATE_SLOTS: ProposedDateSlot[] = [
+  {
+    id: 'slot-sem1-friday',
+    badge: 'Recommended · Semester 1 Sprint',
+    date: 'Friday, 4 December 2026',
+    time: '2:30 PM – 5:30 PM (3 Hours)',
+    venue: 'Dewan Kuliah 1 (DK1), Block B, FSKTM',
+    whyFits:
+      'Matches PEKOM’s proven Friday afternoon slot (e.g. Enterprise AI Beyond the Hype). Zero clash with morning lectures or Friday prayers.',
+    academicContext: '2 weeks before Semester 1 final study week; maximum student turn-out.',
+  },
+  {
+    id: 'slot-sem1-saturday',
+    badge: 'High-Focus · Weekend Hackathon',
+    date: 'Saturday, 12 December 2026',
+    time: '9:30 AM – 1:30 PM (4 Hours)',
+    venue: 'Makmal Multimedia 1 & 2 (MM1/MM2), Block A, FSKTM',
+    whyFits:
+      'Dedicated 4-hour uninterrupted sprint on 60+ dual-screen lab PCs. Perfect precursor to the PEKOM Dean’s Cup festival.',
+    academicContext: 'Weekend session with free campus parking and quiet lab environment.',
+  },
+  {
+    id: 'slot-sem2-welcome',
+    badge: 'Semester 2 Kickoff & Careers',
+    date: 'Friday, 19 March 2027',
+    time: '2:30 PM – 5:30 PM (3 Hours)',
+    venue: 'Dewan Kuliah 1 (DK1) or The Cube, Block A',
+    whyFits:
+      'New semester welcome week. Prime timing for Year 2 & 3 students exploring Final Year Projects (FYP) and Deriv BeSquare internships.',
+    academicContext: 'First month of Semester 2; high energy, no mid-term test pressures.',
+  },
+];
+
+export const SPONSORSHIP_BUDGET: BudgetLineItem[] = [
+  {
+    category: 'Student Competition Prizes',
+    amount: 'RM 2,000',
+    description: 'Cash / Tech Vouchers for Top 3 Teams (1st: RM 1,000 · 2nd: RM 600 · 3rd: RM 400)',
+    coveredBy: '100% Funded by Deriv',
+  },
+  {
+    category: 'Halal Catering & Coffee Station',
+    amount: 'RM 1,800',
+    description:
+      'Welcome pack (water/mints), mid-break high-tea (curry puffs/pastries + teh tarik/coffee), and post-event bento meal for 100 pax.',
+    coveredBy: '100% Funded by Deriv',
+  },
+  {
+    category: 'Official Developer Swag & Kits',
+    amount: 'RM 800',
+    description:
+      'Deriv developer T-shirts, stickers, laptop sleeves, lanyards, and printed quickstart WebSocket cheat-sheets.',
+    coveredBy: '100% Funded by Deriv',
+  },
+  {
+    category: 'Cloud Sandboxes & Test Quotas',
+    amount: 'RM 400',
+    description: 'Pre-authenticated Deriv WebSocket sandbox credentials with zero-risk virtual trading funds.',
+    coveredBy: '100% Funded by Deriv',
+  },
+];
+
+export const FNB_DETAILS = {
+  catererStatus: '100% Halal-Certified Catering Partner',
+  headcount: 'Budgeted for 100 students + 15 PEKOM committee members',
+  schedule: [
+    {
+      timing: '2:00 PM – Registration',
+      items: 'Welcome cold mineral water, mints, and event folder with API token cards.',
+    },
+    {
+      timing: '3:45 PM – Tech Break',
+      items:
+        'Freshly baked curry puffs, chocolate croissants, hot teh tarik station, and freshly brewed coffee at DK1 foyer.',
+    },
+    {
+      timing: '5:15 PM – Closing & Demos',
+      items: 'Gourmet chicken/vegetarian bento boxes or artisan pizza slices for all participants.',
+    },
+  ],
+};
+
+export const WHY_CHOOSE_DERIV: WhyChoosePoint[] = [
+  {
+    id: 'proximity',
+    title: 'Only 25 Mins From UM Campus',
+    description:
+      'Our Malaysian engineering headquarters is located at 3500 Jalan Teknokrat 3, Cyberjaya. Our software engineers physically come to FSKTM in person—no remote calls or absent sponsors.',
+    badge: 'Physical Presence',
+    stat: '25 Mins Drive',
+  },
+  {
+    id: 'real-fintech',
+    title: 'Low-Latency, High-Throughput Systems',
+    description:
+      'Students build on real WebSockets (wss://ws.derivws.com/websockets/v3) handling millions of ticks per second, learning production-grade asynchronous architectures in Rust, Go, Python, and TypeScript.',
+    badge: 'Production Tech',
+    stat: '25+ Years in Tech',
+  },
+  {
+    id: 'careers',
+    title: 'BeSquare Fast-Track & High-Tier Graduate Jobs',
+    description:
+      'Top student participants get fast-track interview passes for Deriv’s flagship BeSquare graduate programme and paid software engineering internships in Cyberjaya.',
+    badge: 'Direct Careers',
+    stat: 'Top 10 Employer MY',
+  },
+  {
+    id: 'zero-bureaucracy',
+    title: 'Zero Faculty Paperwork Friction',
+    description:
+      'Deriv provides a pre-drafted official industry collaboration letter that PEKOM exco can submit directly to the FSKTM Deputy Dean (HEPA / Student Affairs) for instant room clearance.',
+    badge: 'Turnkey Support',
+    stat: '1-Click Paperwork',
+  },
+];
+
+export const ROLE_DIVISION = {
+  pekom: [
+    {
+      role: 'FSKTM Venue Reservation',
+      detail: 'Submit internal room booking for DK1 (Block B) or Makmal MM1 (Block A) via HEPA portal.',
+    },
+    {
+      role: 'Student Outreach & RSVP',
+      detail: 'Broadcast co-branded poster across @pekomum Instagram & student Telegram channels (target: 60–100 students).',
+    },
+    {
+      role: 'Day-of-Event Check-in',
+      detail: 'Provide 3–4 student committee members at the door to verify student IDs and distribute badges.',
+    },
+  ],
+  deriv: [
+    {
+      role: 'RM 5,000 Sponsorship Check',
+      detail: 'Full financial payment for student prizes, Halal catering, coffee station, and official merchandise.',
+    },
+    {
+      role: '3 Senior Engineering Mentors',
+      detail: 'Staff engineers from Cyberjaya HQ leading the live WebSocket code walkthrough and judging student hacks.',
+    },
+    {
+      role: 'API Sandboxes & Starter Repos',
+      detail: 'Ready-to-clone GitHub repos in Python and JavaScript with working WebSocket boilerplate.',
+    },
+    {
+      role: 'Fast-Track BeSquare Interviews',
+      detail: 'Direct resume screening and interview passes for outstanding FSKTM student developers.',
     },
   ],
 };
@@ -127,9 +305,10 @@ export const FSKTM_VENUES: VenueCard[] = [
   {
     id: 'venue-dk1',
     name: 'Dewan Kuliah 1 (DK1)',
-    block: 'Block B · FSKTM',
-    bestFor: 'Main API Architecture Briefing & Large Cohort Demos',
-    capacity: '80–120+ Pax (Tiered Seating)',
+    block: 'Block B · FSKTM, Universiti Malaya',
+    bestFor: 'Kickoff Keynote, WebSocket Architecture Talk & Team Demos',
+    capacity: '120–150 Students (Tiered Theatre)',
+    specs: 'Dual HD Projectors · High-gain PA Audio · Campus Eduroam & UM-WiFi',
     image: BRAND_ASSETS.fsktmDk1Hall,
     imageAlt: 'Dewan Kuliah 1 (DK1) inside Block B at FSKTM Universiti Malaya',
     targetUrl: EXTERNAL_LINKS.fsktmMap,
@@ -138,9 +317,10 @@ export const FSKTM_VENUES: VenueCard[] = [
   {
     id: 'venue-mm-lab',
     name: 'Makmal Multimedia (MM1 / MM2)',
-    block: 'Block A · FSKTM',
-    bestFor: 'Hands-On Python/JS WebSocket Coding Sprint',
-    capacity: '40–60 PC Workstations',
+    block: 'Block A · FSKTM, Universiti Malaya',
+    bestFor: 'Hands-On API Coding Sprint & High-Performance Bot Development',
+    capacity: '60 PC Workstations (Expandable to 80)',
+    specs: 'High-spec Workstations · Dual Monitors · Gigabit Wired LAN + Wi-Fi',
     image: BRAND_ASSETS.fsktmMmLab,
     imageAlt: 'Block A Multimedia Lab MM1 and MM2 at FSKTM Universiti Malaya',
     targetUrl: EXTERNAL_LINKS.fsktmBlockAMap,
@@ -148,41 +328,31 @@ export const FSKTM_VENUES: VenueCard[] = [
   },
   {
     id: 'venue-collab-lab',
-    name: 'Collaborative Round-Table Lab',
-    block: 'Block A · FSKTM',
-    bestFor: 'Team Prototype Sprint & Roving Engineer Mentorship',
-    capacity: '30–50 Pax (Team Pods)',
+    name: 'The Cube & Collaborative Labs',
+    block: 'Ground Floor, Block A · FSKTM',
+    bestFor: 'Team Pods, Coffee Break & 1-on-1 Mentor Code Reviews',
+    capacity: '40–60 Students in Pod Clusters',
+    specs: 'Movable Whiteboards · Pod Seating · Power Sockets on Every Island',
     image: BRAND_ASSETS.fsktmCollabLab,
     imageAlt: 'Block A collaborative round-table lab at FSKTM Universiti Malaya',
     targetUrl: EXTERNAL_LINKS.fsktmBlockAMap,
     urlLabel: 'Double-click to open FSKTM Block A in Google Maps',
   },
-  {
-    id: 'venue-se-net-lab',
-    name: 'SE, Networking & AI Labs',
-    block: 'Block A · FSKTM',
-    bestFor: 'Algorithmic Bot, Systems & Agentic AI Tracks',
-    capacity: '40+ Lab Workstations',
-    image: BRAND_ASSETS.fsktmSeLab,
-    imageAlt: 'Block A Software Engineering computer lab at FSKTM Universiti Malaya',
-    targetUrl: EXTERNAL_LINKS.fsktmWebsite,
-    urlLabel: 'Double-click to visit official FSKTM UM website (fsktm.um.edu.my)',
-  },
 ];
 
 export const REAL_TRACK_RECORD = {
   fsktmSide: {
-    badge: 'TAILORED TO PEKOM & FCSIT WORKFLOWS',
-    title: 'Designed Around Real PEKOM Events & FSKTM Schedules',
+    badge: 'TAILORED SPECIFICALLY TO PEKOM',
+    title: 'Built Around Proven PEKOM Event Formats',
     description:
-      'We studied how PEKOM runs high-impact FCSIT sessions—from technical workshops in DK1 (Block B) and Bilik Kuliah 2 (Block A) to hands-on coding sessions—so this joint buildathon plugs effortlessly into your semester calendar.',
+      'We designed this collaboration to match the exact successful rhythms PEKOM uses for high-turnout FSKTM events—such as Friday technical sessions in DK1 and computer lab hackathons.',
     cards: [
       {
         id: 'pekom-dk1-card',
-        tag: 'DK1, Block B · FCSIT (Fri 2:30–5:00 PM)',
+        tag: 'DK1, Block B · Proven Friday Slot',
         title: 'Fits Your Standard DK1 Workshop Slot',
         subtitle:
-          'Modeled on PEKOM’s "Enterprise AI Beyond the Hype" session in DK1 Block B—students bring a charged laptop and build live.',
+          'Modeled on PEKOM’s "Enterprise AI Beyond the Hype" session in DK1 Block B—students bring a laptop and build live with no schedule conflict.',
         image: BRAND_ASSETS.pekomEnterpriseAiDk1,
         imageAlt: 'PEKOM Enterprise AI Beyond the Hype workshop at DK1 Block B FCSIT',
         targetUrl: EXTERNAL_LINKS.pekomInstagram,
@@ -201,10 +371,10 @@ export const REAL_TRACK_RECORD = {
       },
       {
         id: 'pekom-bk2-card',
-        tag: 'Bilik Kuliah 2, Block A · FCSIT (2–4 PM)',
+        tag: 'Bilik Kuliah 2, Block A · Career Insights',
         title: 'Direct Industry & Engineering Access',
         subtitle:
-          'Works equally well in a Tuesday 2:00–4:00 PM slot in Bilik Kuliah 2, Block A with direct career & engineering Q&A.',
+          'Works equally well as a 2-hour technical sharing session in Bilik Kuliah 2, Block A with direct career & engineering Q&A.',
         image: BRAND_ASSETS.pekomIndustryTalkBk2,
         imageAlt: 'PEKOM Career & Innovation session at Bilik Kuliah 2 Block A FCSIT',
         targetUrl: EXTERNAL_LINKS.fsktmBlockAMap,
@@ -226,20 +396,20 @@ export const REAL_TRACK_RECORD = {
 };
 
 export const ACTIVITY_SPOTLIGHT = {
-  badge: 'ONE CONCRETE JOINT ACTIVITY',
+  badge: 'USEFUL ACTIVITY WE CAN DO TOGETHER',
   title: 'Deriv Real-Time API & Algo-Trading Mini-Buildathon',
   subtitle:
-    'A practical half-day technical session hosted right at Dewan Kuliah 1 (DK1, Block B) or Block A Computer Labs (MM1/MM2) at FSKTM. Students connect to Deriv’s live WebSocket server (wss://ws.derivws.com/websockets/v3) and build a working FinTech prototype in one afternoon.',
-  venueNote: 'Ideal for 40–120 FCSIT students · Bring a charged laptop or use Block A Lab PCs',
+    'A 3 to 4-hour hands-on technical workshop and mini-competition hosted on campus at FSKTM Universiti Malaya. Undergraduates connect directly to Deriv’s real-time WebSocket stream (wss://ws.derivws.com/websockets/v3) and build a functional FinTech prototype before dinner.',
+  venueNote: 'Hosted at Dewan Kuliah 1 (Block B) or Makmal Multimedia MM1/MM2 (Block A)',
   stages: [
     {
       id: 'stage-1',
-      timeBlock: 'Hour 1',
-      title: 'Live API & WebSocket Architecture',
+      timeBlock: 'Hour 1 (2:30 – 3:30 PM)',
+      title: 'WebSocket Architecture & Live Streaming Kickoff',
       description:
-        'Deriv engineers walk students through connecting to the live Deriv WebSocket API using Python or JavaScript—covering low-latency tick streams, JSON schemas, and authentication right inside DK1 or Block A Labs.',
-      deliverable: 'Every student streams live synthetic & forex market ticks on their machine.',
-      techTags: ['WebSockets (v3)', 'Python / asyncio', 'TypeScript / JS', 'JSON-RPC'],
+        'Deriv engineers walk through WebSocket protocols, real-time tick streaming, JSON-RPC messages, and authentication. Students clone our Python/TypeScript starter repo and establish a live connection within 15 minutes.',
+      deliverable: 'Every student streams live market ticks on their screen.',
+      techTags: ['WebSockets (v3)', 'Python asyncio', 'TypeScript', 'JSON-RPC'],
       image: BRAND_ASSETS.fsktmDk1Hall,
       imageAlt: 'Dewan Kuliah 1 (DK1) Block B at FSKTM Universiti Malaya',
       imageCaption: 'Kickoff inside DK1 (Block B) or Makmal Multimedia MM1/MM2 (Block A)',
@@ -248,12 +418,12 @@ export const ACTIVITY_SPOTLIGHT = {
     },
     {
       id: 'stage-2',
-      timeBlock: 'Hours 2–3',
-      title: 'Guided Prototype Sprint',
+      timeBlock: 'Hours 2–3 (3:30 – 4:45 PM)',
+      title: 'Guided Hackathon Sprint & Mentor Desks',
       description:
-        'Student teams build a live market-tick analyzer, automated alert bot, or risk calculator using real-time streaming data with roving 1-on-1 mentorship from our Cyberjaya engineering team.',
-      deliverable: 'Working GitHub prototype built on top of our starter repository.',
-      techTags: ['Real-Time Tick Stream', 'Automated Alert Bot', 'Risk Calculator', 'Live Debugging'],
+        'Student teams build a real-time volatility alert bot, arbitrage dashboard, or algorithmic trading agent with roving 1-on-1 code reviews from 3 Deriv senior engineers from Cyberjaya HQ.',
+      deliverable: 'Functional prototype tested against live Deriv sandbox markets.',
+      techTags: ['Real-Time Tick Stream', 'Algorithmic Bot', 'Risk Dashboard', '1-on-1 Mentorship'],
       image: BRAND_ASSETS.derivMentors,
       imageAlt: 'Deriv engineers pair-programming and mentoring on laptops',
       imageCaption: 'Roving 1-on-1 code mentorship by Deriv Cyberjaya engineers',
@@ -262,15 +432,15 @@ export const ACTIVITY_SPOTLIGHT = {
     },
     {
       id: 'stage-3',
-      timeBlock: 'Hour 4',
-      title: 'Live Demos, Prizes & Career Fast-Track',
+      timeBlock: 'Hour 4 (4:45 – 5:30 PM)',
+      title: 'Live Pitching, RM 2,000 Prizes & Career Fast-Track',
       description:
-        'Teams demo their builds to Deriv engineers for direct code architecture feedback, career Q&A on software & AI engineering roles in Cyberjaya, official co-branded PEKOM × Deriv certificates, and prizes.',
-      deliverable: 'Portfolio-ready project + direct fast-track visibility for Deriv internships.',
-      techTags: ['Code Review', 'Swag & Prizes', 'PEKOM × Deriv Certs', 'Internship Fast-Track'],
+        'Top 5 teams present 2-minute live demos on the DK1 big screen. Deriv awards the RM 2,000 cash prize pool, hands out co-branded certificates, and invites top performers for BeSquare graduate interviews.',
+      deliverable: 'RM 2,000 awarded · Fast-track interview invites · Halal bento dinner.',
+      techTags: ['RM 2,000 Cash Prizes', 'BeSquare Fast-Track', 'Co-Branded Certs', 'Halal Bento Meal'],
       image: BRAND_ASSETS.derivTeam,
       imageAlt: 'Deriv Malaysia team at Cyberjaya campus',
-      imageCaption: 'Swag, prizes & direct fast-track to Deriv Malaysia careers',
+      imageCaption: 'Prizes, swag, and career fast-track to Deriv Malaysia',
       targetUrl: EXTERNAL_LINKS.derivCareers,
       urlLabel: 'Double-click to explore Deriv Malaysia careers (deriv.com/careers)',
     },
@@ -280,73 +450,77 @@ export const ACTIVITY_SPOTLIGHT = {
 export const CLUB_RESOURCES: ResourceCheckbox[] = [
   {
     id: 'venue',
-    label: 'Campus Venue & Projector (DK1 Block B, BK2, or Block A Labs MM1/MM2)',
-    detail: 'Standard FSKTM lecture hall or Block A computer lab booking with campus Wi-Fi and screen projection.',
+    label: 'Campus Venue Reservation (DK1 Block B or Makmal MM1 Block A)',
+    detail: 'Standard FSKTM internal room booking via HEPA with campus Wi-Fi and projector.',
     defaultChecked: true,
   },
   {
     id: 'outreach',
-    label: 'Student Outreach & QR Registration (40–100+ FCSIT students)',
-    detail: 'Posting the co-branded event poster & registration QR across @pekomum Instagram and faculty channels.',
+    label: 'Student Society Outreach (Target: 60–100 FSKTM Students)',
+    detail: 'Broadcasting the co-branded poster across @pekomum Instagram and faculty batch groups.',
     defaultChecked: true,
   },
   {
-    id: 'snacks',
-    label: 'Event Snacks or Refreshments',
-    detail: 'Leave unchecked if your society budget does not cover food—Deriv will step in automatically.',
-    defaultChecked: false,
+    id: 'checkin',
+    label: 'Student Committee Door Check-In',
+    detail: '3–4 PEKOM committee members to scan matric cards and hand out event badges.',
+    defaultChecked: true,
   },
 ];
 
 export const DERIV_BASE_COMMITMENTS: DerivCommitment[] = [
   {
+    id: 'cash-sponsorship',
+    title: 'RM 5,000 Full Turnkey Sponsorship',
+    description:
+      'Deriv provides RM 2,000 student cash prizes, RM 1,800 Halal catering & coffee station, RM 800 developer swag kits, and RM 400 test quota.',
+    badge: '100% Deriv Funded',
+  },
+  {
     id: 'engineers',
-    title: 'Deriv Engineers & Mentors (from Cyberjaya HQ)',
+    title: '3 Senior Engineers from Cyberjaya HQ (In-Person)',
     description:
-      '2–4 software & AI engineers travel from 3500 Jalan Teknokrat 3, Cyberjaya to lead the buildathon in person at FSKTM.',
-    badge: 'Always Included',
+      'Staff engineers travel 25 mins from 3500 Jalan Teknokrat 3 to FSKTM to teach WebSockets, judge code, and mentor students 1-on-1.',
+    badge: 'In-Person Mentors',
   },
   {
-    id: 'sandbox',
-    title: 'Free Deriv API Sandbox Tokens & Starter GitHub Repo',
+    id: 'besquare',
+    title: 'BeSquare Programme Fast-Track Interviews',
     description:
-      'Pre-configured demo API tokens, zero-risk virtual accounts, and boilerplate Python/JS templates so zero time is wasted on setup.',
-    badge: 'Always Included',
-  },
-  {
-    id: 'swag',
-    title: 'Co-Branded Certificates (PEKOM × Deriv), Prizes & Swag',
-    description:
-      'Official digital certificates for UM merit/portfolio tracking, exclusive Deriv developer merch, and prizes for top student demos.',
-    badge: 'Always Included',
+      'Direct priority interviews for Deriv’s high-compensation graduate software engineer pathway for standout FSKTM students.',
+    badge: 'Career Gateway',
   },
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    id: 'faq-cost',
-    question: 'Does this cost PEKOM, our club, or FSKTM students anything?',
+    id: 'faq-who-pays',
+    question: 'Does PEKOM or the student society have to pay anything?',
     answer:
-      'No. Deriv covers engineering speakers, API sandbox access, developer swag, prizes, and can sponsor refreshments so the workshop is 100% free for all UM FCSIT students.',
+      'Zero. Deriv sponsors 100% of the event expenses (RM 5,000 total package), including RM 2,000 cash prizes, full Halal food and beverage catering, developer swag, and API credentials. There is zero financial cost to PEKOM or FSKTM.',
   },
   {
-    id: 'faq-prereq',
-    question: 'Do students need prior trading or finance knowledge?',
+    id: 'faq-fnb',
+    question: 'What food & beverages are provided, and is it Halal?',
     answer:
-      'Not at all. The session focuses on WebSocket APIs, asynchronous Python/JS, and real-time data streams—any Year 1 to Year 4 FSKTM student from AI, Software Engineering, Computer Systems & Technology, or Information Systems can follow along.',
+      'Yes, all food is sourced from certified Halal caterers. Deriv covers welcome mineral water and mints, a mid-session high tea (pastries, curry puffs, hot teh tarik, and coffee station), plus post-event bento dinner boxes for 100 students and committee members.',
   },
   {
-    id: 'faq-leadtime',
-    question: 'How much lead time do we need before the event?',
+    id: 'faq-dates',
+    question: 'Can we change the suggested date or time?',
     answer:
-      'Ideally 3 to 4 weeks before your target slot (such as a Tuesday 2:00–4:00 PM slot in BK2 Block A or a Friday 2:30–5:00 PM slot in DK1 Block B) so we can align with your academic calendar and provide official speaker letters for FSKTM Student Affairs (HEPA) approval.',
+      'Yes! We proposed 3 high-affinity dates (Dec 4, Dec 12, Mar 19), but your committee can propose any weekday afternoon (e.g. Tuesday/Wednesday 2–5 PM) or Saturday slot that suits FSKTM academic schedules.',
   },
-];
-
-export const TARGET_MONTH_SUGGESTIONS = [
-  'November / December 2026 (Semester 1 · Pre-Dean’s Cup)',
-  'January 2027 (Semester 1 Late Slot)',
-  'March 2027 (Semester 2 Kickoff)',
-  'April 2027 (Friday 2:30–5:00 PM @ DK1 Block B / Block A Labs)',
-  'May 2027 (Semester 2 Buildathon Slot)',
+  {
+    id: 'faq-paperwork',
+    question: 'How do we get approval from FSKTM Deputy Dean / Student Affairs (HEPA)?',
+    answer:
+      'Deriv provides an official company letter of collaboration and speaker biodata. PEKOM simply attaches it to their standard FSKTM event paperwork. Lead time is typically 2–3 weeks.',
+  },
+  {
+    id: 'faq-skills',
+    question: 'Do students need financial trading experience?',
+    answer:
+      'No financial experience is required. The buildathon is 100% software engineering and algorithms: connecting to WebSockets, parsing JSON, plotting real-time charts, and writing bot logic in Python, JavaScript, or Go.',
+  },
 ];

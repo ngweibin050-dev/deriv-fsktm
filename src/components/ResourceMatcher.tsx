@@ -67,10 +67,10 @@ export const ResourceMatcher: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-base font-bold text-white print:text-[#0E0E0E]">
-                      What Your Club Brings
+                      What PEKOM / Student Club Provides (Host)
                     </h3>
                     <p className="text-xs text-slate-400">
-                      Check off what your FSKTM committee already has
+                      Check off what your FSKTM student committee prepares
                     </p>
                   </div>
                 </div>
@@ -137,10 +137,10 @@ export const ResourceMatcher: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-base font-bold text-white print:text-[#0E0E0E]">
-                      What Deriv Covers Automatically
+                      What Deriv Provides (Sponsor &amp; Tech Partner)
                     </h3>
                     <p className="text-xs text-slate-400">
-                      Zero invoice or sponsorship paperwork required from students
+                      Zero invoice or sponsorship paperwork required from student exco
                     </p>
                   </div>
                 </div>
