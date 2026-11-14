@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Printer } from 'lucide-react';
+import { Mail, Printer } from 'lucide-react';
 import { BRAND_ASSETS, EXTERNAL_LINKS, openOnDoubleClick } from '../data/partnershipData';
 
 export const Navbar: React.FC = () => {

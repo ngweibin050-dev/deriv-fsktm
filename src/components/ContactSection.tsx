@@ -9,10 +9,8 @@ import {
   MapPin,
   MessageSquare,
   Phone,
-  ShieldCheck,
-  Sparkles,
 } from 'lucide-react';
-import { BRAND_ASSETS, EXTERNAL_LINKS, openOnDoubleClick } from '../data/partnershipData';
+import { BRAND_ASSETS, EXTERNAL_LINKS } from '../data/partnershipData';
 
 export const ContactSection: React.FC = () => {
   return (

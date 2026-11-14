@@ -1,16 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
-  Calendar,
   Check,
   CheckCircle2,
   Copy,
-  Download,
   FileText,
   Mail,
-  MapPin,
   Send,
   Sparkles,
-  Users,
 } from 'lucide-react';
 import { PROPOSED_DATE_SLOTS } from '../data/partnershipData';
 
@@ -29,6 +25,20 @@ export const FirstStepForm: React.FC<Props> = ({ selectedSlot: externalSlot }) =
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedLetter, setCopiedLetter] = useState(false);
+
+  useEffect(() => {
+    if (externalSlot) {
+      const match = PROPOSED_DATE_SLOTS.find(
+        (s) => `${s.date} (${s.time})` === externalSlot
+      );
+      if (match) {
+        setSelectedSlotId(match.id);
+      } else {
+        setSelectedSlotId('custom');
+        setCustomSlot(externalSlot);
+      }
+    }
+  }, [externalSlot]);
 
   // Active chosen slot label
   const activeSlotString = useMemo(() => {

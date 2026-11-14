@@ -1,12 +1,8 @@
 import React from 'react';
 import {
   Banknote,
-  Building2,
-  CalendarCheck,
   CheckCircle2,
   Coffee,
-  HeartHandshake,
-  ShieldCheck,
   Sparkles,
   Utensils,
 } from 'lucide-react';

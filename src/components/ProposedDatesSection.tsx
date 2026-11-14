@@ -2,11 +2,8 @@ import React from 'react';
 import {
   Calendar,
   Clock,
-  Compass,
   MapPin,
-  Sparkles,
   ArrowRight,
-  CheckCircle2,
 } from 'lucide-react';
 import { PROPOSED_DATE_SLOTS, FSKTM_VENUES, openOnDoubleClick } from '../data/partnershipData';
 

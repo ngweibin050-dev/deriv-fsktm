@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Award,
   Building2,
-  Code2,
   ExternalLink,
   MapPin,
   MousePointerClick,
