@@ -6,13 +6,32 @@
   html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     color: #0E0E0E;
-    background-color: #F8FAFC;
+    background-color: #0F172A;
   }
 
   h1, h2, h3, h4, .font-heading {
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
+}
+
+.bg-hero-mesh {
+  background-color: #0E131F;
+  background-image:
+    radial-gradient(at 12% 18%, rgba(255, 68, 79, 0.24) 0px, transparent 48%),
+    radial-gradient(at 88% 22%, rgba(30, 58, 138, 0.34) 0px, transparent 52%),
+    radial-gradient(at 50% 95%, rgba(255, 68, 79, 0.14) 0px, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+.bg-section-coral-slate {
+  background: linear-gradient(135deg, #FFF1F2 0%, #EEF2FF 52%, #E2E8F0 100%);
+}
+
+.bg-section-indigo-tint {
+  background: linear-gradient(180deg, #E2E8F0 0%, #EFF6FF 50%, #FFF1F2 100%);
 }
 
 /* Single-Page A4 Print Stylesheet for Club Committees & Faculty Advisors */
@@ -22,8 +41,9 @@
     margin: 10mm 12mm;
   }
 
-  body {
+  body, html, .bg-hero-mesh, .bg-section-coral-slate, .bg-section-indigo-tint {
     background: #FFFFFF !important;
+    background-image: none !important;
     color: #0E0E0E !important;
     font-size: 9.5pt !important;
     line-height: 1.35 !important;
@@ -47,6 +67,8 @@
   }
 
   .print-card {
+    background: #FFFFFF !important;
+    color: #0E0E0E !important;
     box-shadow: none !important;
     border: 1px solid #CBD5E1 !important;
     break-inside: avoid !important;

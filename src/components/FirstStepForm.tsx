@@ -71,7 +71,6 @@ Reply-To: ${trimmedEmail}`;
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback copy method if clipboard permissions are restricted
       const textArea = document.createElement('textarea');
       textArea.value = outreachMessage;
       document.body.appendChild(textArea);
@@ -86,29 +85,29 @@ Reply-To: ${trimmedEmail}`;
   return (
     <section
       id="first-step"
-      className="py-12 sm:py-16 bg-white print-compact"
+      className="py-12 sm:py-16 bg-hero-mesh print-compact"
       aria-labelledby="first-step-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-6 shadow-sm sm:p-8 print-card">
+        <div className="rounded-2xl border border-slate-700/90 bg-slate-900/90 p-6 text-white shadow-2xl backdrop-blur-md sm:p-8 print-card">
           {/* Header */}
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FF444F]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#FF444F]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FF444F]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#FF6B74]">
               <Sparkles className="h-3.5 w-3.5" />
               Low-Friction Kickoff
             </span>
-            <span className="text-xs font-semibold text-[#475569]">
+            <span className="text-xs font-semibold text-slate-400">
               Replies within 2 business days · Deriv Cyberjaya
             </span>
           </div>
 
           <h2
             id="first-step-heading"
-            className="mt-3 font-heading text-2xl font-extrabold text-[#0E0E0E] sm:text-3xl print:text-xl"
+            className="mt-3 font-heading text-2xl font-extrabold text-white sm:text-3xl print:text-xl print:text-[#0E0E0E]"
           >
             One Simple First Step
           </h2>
-          <p className="mt-2 max-w-prose text-sm leading-relaxed text-[#475569] sm:text-base print:text-xs">
+          <p className="mt-2 max-w-prose text-sm leading-relaxed text-slate-300 sm:text-base print:text-xs print:text-[#475569]">
             No lengthy proposal deck required. Share your club name and target month to lock in a
             quick 15-minute alignment call with our Malaysia campus team.
           </p>
@@ -134,7 +133,7 @@ Reply-To: ${trimmedEmail}`;
                   <div>
                     <label
                       htmlFor="club-name"
-                      className="block text-xs font-bold uppercase tracking-wide text-[#0E0E0E]"
+                      className="block text-xs font-bold uppercase tracking-wide text-slate-200"
                     >
                       1. Club / Society Name
                     </label>
@@ -146,8 +145,8 @@ Reply-To: ${trimmedEmail}`;
                         required
                         value={clubName}
                         onChange={(e) => setClubName(e.target.value)}
-                        placeholder="e.g., PEKOM, GDG UM, AI Club"
-                        className="w-full rounded-xl border border-[#E2E8F0] bg-white pl-9 pr-3.5 py-2.5 text-sm text-[#0E0E0E] placeholder:text-slate-400 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/20"
+                        placeholder="e.g., PEKOM, GDGoC UM, AI Club"
+                        className="w-full rounded-xl border border-slate-700 bg-slate-950 pl-9 pr-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/25"
                       />
                     </div>
                   </div>
@@ -156,7 +155,7 @@ Reply-To: ${trimmedEmail}`;
                   <div>
                     <label
                       htmlFor="target-month"
-                      className="block text-xs font-bold uppercase tracking-wide text-[#0E0E0E]"
+                      className="block text-xs font-bold uppercase tracking-wide text-slate-200"
                     >
                       2. Target Month
                     </label>
@@ -169,8 +168,8 @@ Reply-To: ${trimmedEmail}`;
                         required
                         value={targetMonth}
                         onChange={(e) => setTargetMonth(e.target.value)}
-                        placeholder="e.g., December 2026 / Semester 1"
-                        className="w-full rounded-xl border border-[#E2E8F0] bg-white pl-9 pr-3.5 py-2.5 text-sm text-[#0E0E0E] placeholder:text-slate-400 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/20"
+                        placeholder="e.g., December 2026 / Sem 1"
+                        className="w-full rounded-xl border border-slate-700 bg-slate-950 pl-9 pr-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/25"
                       />
                       <datalist id="target-month-options">
                         {TARGET_MONTH_SUGGESTIONS.map((option) => (
@@ -184,7 +183,7 @@ Reply-To: ${trimmedEmail}`;
                   <div>
                     <label
                       htmlFor="organizer-email"
-                      className="block text-xs font-bold uppercase tracking-wide text-[#0E0E0E]"
+                      className="block text-xs font-bold uppercase tracking-wide text-slate-200"
                     >
                       3. Organizer Email
                     </label>
@@ -197,7 +196,7 @@ Reply-To: ${trimmedEmail}`;
                         value={organizerEmail}
                         onChange={(e) => setOrganizerEmail(e.target.value)}
                         placeholder="name@siswa.um.edu.my"
-                        className="w-full rounded-xl border border-[#E2E8F0] bg-white pl-9 pr-3.5 py-2.5 text-sm text-[#0E0E0E] placeholder:text-slate-400 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/20"
+                        className="w-full rounded-xl border border-slate-700 bg-slate-950 pl-9 pr-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-[#FF444F] focus:outline-none focus:ring-2 focus:ring-[#FF444F]/25"
                       />
                     </div>
                   </div>
@@ -206,19 +205,19 @@ Reply-To: ${trimmedEmail}`;
                 {errorMessage && (
                   <p
                     role="alert"
-                    className="rounded-lg border border-[#FF444F]/30 bg-[#FF444F]/10 px-3.5 py-2 text-xs font-medium text-[#FF444F]"
+                    className="rounded-lg border border-[#FF444F]/40 bg-[#FF444F]/15 px-3.5 py-2 text-xs font-medium text-[#FF6B74]"
                   >
                     {errorMessage}
                   </p>
                 )}
 
                 <div className="flex flex-col items-start justify-between gap-3 pt-2 sm:flex-row sm:items-center">
-                  <p className="text-xs text-[#475569]">
+                  <p className="text-xs text-slate-400">
                     Generates an instant outreach note for email or WhatsApp/Telegram committee chats.
                   </p>
                   <button
                     type="submit"
-                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#FF444F] px-6 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[#E63540] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF444F] focus-visible:ring-offset-2"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#FF444F] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#FF444F]/25 transition-colors hover:bg-[#E63540] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF444F]"
                   >
                     <Send className="h-4 w-4" />
                     <span>Prepare 15-Min Intro Request</span>
@@ -227,13 +226,13 @@ Reply-To: ${trimmedEmail}`;
               </form>
             ) : (
               /* Confirmation View ("Ready to Send") */
-              <div className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-sm">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2E8F0] pb-3">
+              <div className="rounded-xl border border-slate-700 bg-slate-950 p-5 shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                       <Check className="h-3.5 w-3.5 stroke-[2.5]" />
                     </span>
-                    <h3 className="font-heading text-sm font-bold text-[#0E0E0E]">
+                    <h3 className="font-heading text-sm font-bold text-white">
                       Ready to Send — {trimmedClub} × Deriv
                     </h3>
                   </div>
@@ -241,7 +240,7 @@ Reply-To: ${trimmedEmail}`;
                   <button
                     type="button"
                     onClick={() => setIsSubmitted(false)}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#475569] hover:text-[#0E0E0E] focus:outline-none"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-400 hover:text-white focus:outline-none"
                   >
                     <Edit3 className="h-3 w-3" />
                     <span>Edit details</span>
@@ -249,7 +248,7 @@ Reply-To: ${trimmedEmail}`;
                 </div>
 
                 {/* Pre-formatted Message Preview */}
-                <div className="mt-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-3.5 font-mono text-xs leading-relaxed text-[#0E0E0E] whitespace-pre-wrap">
+                <div className="mt-3 rounded-lg border border-slate-800 bg-slate-900 p-3.5 font-mono text-xs leading-relaxed text-slate-200 whitespace-pre-wrap">
                   {outreachMessage}
                 </div>
 
@@ -266,16 +265,16 @@ Reply-To: ${trimmedEmail}`;
                   <button
                     type="button"
                     onClick={handleCopy}
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-[#E2E8F0] bg-white px-5 py-3 text-xs font-bold text-[#0E0E0E] shadow-sm transition-colors hover:bg-[#F8FAFC] sm:text-sm"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 text-xs font-bold text-white shadow-sm transition-colors hover:bg-slate-800 sm:text-sm"
                   >
                     {copied ? (
                       <>
-                        <Check className="h-4 w-4 text-emerald-600" />
-                        <span className="text-emerald-700">Copied!</span>
+                        <Check className="h-4 w-4 text-emerald-400" />
+                        <span className="text-emerald-400">Copied!</span>
                       </>
                     ) : (
                       <>
-                        <Copy className="h-4 w-4 text-[#475569]" />
+                        <Copy className="h-4 w-4 text-slate-400" />
                         <span>Copy Message for WhatsApp / Committee</span>
                       </>
                     )}

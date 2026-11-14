@@ -12,7 +12,7 @@ export const FaqAccordion: React.FC = () => {
   return (
     <section
       id="faq"
-      className="py-12 sm:py-16 border-b border-[#E2E8F0] print-compact"
+      className="py-12 sm:py-16 border-b border-slate-300 bg-section-indigo-tint print-compact"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
@@ -27,8 +27,8 @@ export const FaqAccordion: React.FC = () => {
           >
             Questions Your Advisor &amp; Exco Will Ask
           </h2>
-          <p className="mt-2 text-sm text-[#475569] no-print">
-            Quick answers before you bring this to your next PEKOM, GDG UM, or club committee meeting.
+          <p className="mt-2 text-sm text-[#334155] no-print">
+            Quick answers before you bring this to your next PEKOM, GDGoC UM, or club committee meeting.
           </p>
         </div>
 
@@ -38,13 +38,13 @@ export const FaqAccordion: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white transition-colors print-card"
+                className="overflow-hidden rounded-2xl border border-slate-300/90 bg-white/95 shadow-sm transition-colors print-card"
               >
                 <button
                   type="button"
                   onClick={() => handleToggle(idx)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-heading text-sm font-bold text-[#0E0E0E] hover:bg-[#F8FAFC] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#FF444F] sm:text-base print:py-1 print:px-0"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-heading text-sm font-bold text-[#0E0E0E] hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#FF444F] sm:text-base print:py-1 print:px-0"
                 >
                   <span>{item.question}</span>
                   <ChevronDown
@@ -55,11 +55,11 @@ export const FaqAccordion: React.FC = () => {
                 </button>
 
                 <div
-                  className={`px-5 pb-4 text-sm leading-relaxed text-[#475569] print:block print:px-0 print:pb-0 print:text-xs ${
+                  className={`px-5 pb-4 text-sm leading-relaxed text-[#334155] print:block print:px-0 print:pb-0 print:text-xs ${
                     isOpen ? 'block' : 'hidden'
                   }`}
                 >
-                  <p className="max-w-prose border-t border-[#E2E8F0] pt-3 print:border-0 print:pt-1">
+                  <p className="max-w-prose border-t border-slate-200 pt-3 print:border-0 print:pt-1">
                     {item.answer}
                   </p>
                 </div>
